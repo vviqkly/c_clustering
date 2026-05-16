@@ -10,5 +10,6 @@ typedef struct {
 } KMeans;
 
 void kmeans_random(KMeans *km, Point *data, int n, int k);
+void kmeans(KMeans *km, Point *data, int n, int *labels);
 
 #endif
