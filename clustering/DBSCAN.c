@@ -44,3 +44,12 @@ void dbscan(DBSCAN *db, Point *data, int n, double eps, int min_pts)
         free(neighbors);
     }
 }
+
+void dbscan_free(DBSCAN *db)
+{
+    if (db->cluster_num) 
+    {
+        free(db->cluster_num);
+        db->cluster_num = NULL;
+    }
+}

@@ -11,5 +11,6 @@ typedef struct {
 } DBSCAN;
 
 void dbscan(DBSCAN *db, Point *data, int n, double eps, int min_pts);
+void dbscan_free(DBSCAN *db);
 
 #endif
