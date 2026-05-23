@@ -13,4 +13,6 @@ void kmeans_random(KMeans *km, Point *data, int n, int k);
 void kmeans(KMeans *km, Point *data, int n, int *cluster_num);
 void kmeans_free(KMeans *km);
 
+void kmeans_plus_plus(KMeans *km, Point *data, int n, int k);
+
 #endif
