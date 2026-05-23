@@ -87,3 +87,12 @@ void kmeans(KMeans *km, Point *data, int n, int *cluster_num)
     free(cluster_sizes);
     free(new_centroids);
 }
+
+void kmeans_free(KMeans *km)
+{
+    if (km->centroids) 
+    {
+        free(km->centroids);
+        km->centroids = NULL;
+    }
+}

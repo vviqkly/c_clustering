@@ -10,6 +10,7 @@ typedef struct {
 } KMeans;
 
 void kmeans_random(KMeans *km, Point *data, int n, int k);
-void kmeans(KMeans *km, Point *data, int n, int *labels);
+void kmeans(KMeans *km, Point *data, int n, int *cluster_num);
+void kmeans_free(KMeans *km);
 
 #endif
