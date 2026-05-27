@@ -37,6 +37,7 @@ double silhouette_score(Point *data, int *labels, int n, int num)
         {
             if (i == j) continue;
             double dist = euclid_distance(data[i], data[j]);
+            dist = sqrt(dist);
             if (labels[j] == my_cluster) 
             {
                 a += dist;
