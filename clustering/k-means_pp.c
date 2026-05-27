@@ -48,7 +48,7 @@ void kmeans_init_plus_plus(KMeans *km, Point *data, int n, int k)
     
     for (int i = 1; i < k; ++i) 
     {
-        int next = select_next_centroid(data, n, km->centroids, i);
+        int next = find_next_centroid(data, n, km->centroids, i);
         km->centroids[i] = data[next];
     }
 }
