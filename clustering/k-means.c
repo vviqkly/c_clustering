@@ -31,14 +31,14 @@ void kmeans(KMeans *km, Point *data, int n, int *cluster_num)
     int *cluster_sizes = malloc(km->k * sizeof(int));
     Point *new_centroids = malloc(km->k * sizeof(Point));
     
-    for (int i = 0; i < km->max_iter; ++i) 
+    for (int iter = 0; iter < km->max_iter; ++iter)               // ограничено число итераций, чтобв точно завершился
     {
         int changed = 0;
         
-        for (int j = 0; j < n; ++j)                       // для каждой точкиопределяем какой из центроидов к ней ближе
+        for (int j = 0; j < n; ++j)                                           // для каждой точки ищем ближайший центроид
         {
             double min_dist = DBL_MAX;
-            int point_cluster = 0;
+            int best_cluster = 0;
             
             for (int m = 0; m < km->k; ++m) 
             {
@@ -46,18 +46,18 @@ void kmeans(KMeans *km, Point *data, int n, int *cluster_num)
                 if (dist < min_dist) 
                 {
                     min_dist = dist;
-                    point_cluster = j;
+                    best_cluster = m;
                 }
             }
             
-            if (cluster_num[i] != point_cluster) 
+            if (cluster_num[j] != best_cluster) 
             {
-                cluster_num[i] = point_cluster;
+                cluster_num[j] = best_cluster; 
                 changed = 1;
             }
         }
         
-        if (!changed) break;                           // Если центроиды не меняются, то алгоритм завершен
+        if (!changed) break;                     // Если центры не меняются, заканчиваем
         
         for (int j = 0; j < km->k; ++j) 
         {
@@ -66,7 +66,7 @@ void kmeans(KMeans *km, Point *data, int n, int *cluster_num)
             cluster_sizes[j] = 0;
         }
         
-        for (int j = 0; j < n; ++j)                    // Суммируем координаты точек в каждом кластере для обнвления центроидов
+        for (int j = 0; j < n; ++j)                                     // Суммируем координаты точек в каждом кластере
         {
             int cluster = cluster_num[j];
             new_centroids[cluster].x += data[j].x;
@@ -74,7 +74,7 @@ void kmeans(KMeans *km, Point *data, int n, int *cluster_num)
             ++cluster_sizes[cluster];
         }
         
-        for (int j = 0; j < km->k; ++j)                // обновляем центроиды
+        for (int j = 0; j < km->k; ++j)                                  // Обновляем центроиды
         {
             if (cluster_sizes[j] > 0)
             {
