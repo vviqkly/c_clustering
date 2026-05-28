@@ -37,7 +37,7 @@ static int find_next_centroid(Point *data, int n, Point *centroids, int k_curren
     return selected;
 }
 
-void kmeans_init_plus_plus(KMeans *km, Point *data, int n, int k)
+void kmeans_plus_plus(KMeans *km, Point *data, int n, int k)
 {
     km->k = k;
     km->max_iter = 100;
