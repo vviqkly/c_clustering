@@ -10,7 +10,7 @@ axes = axes.flatten()
 
 for idx, name in enumerate(datasets):
 
-    df = pd.read_csv(f'../clusters_data/{name}.csv', header=None, names=['x', 'y'])
+    df = pd.read_csv(f'clusters_data/{name}.csv', header=None, names=['x', 'y'])
     
     axes[idx].scatter(df['x'], df['y'], s=10, alpha=0.7, c='blue')
     axes[idx].set_title(f'Dataset: {name}', fontsize=14)

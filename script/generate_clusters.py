@@ -5,7 +5,7 @@ import os
 np.random.seed(42)
 
 # Создаём папку
-os.makedirs('../clusters_data', exist_ok=True)
+os.makedirs('clusters_data', exist_ok=True)
 
 data1 = []
 centers = [(-5, -5), (5, -5), (0, 5)]
@@ -16,7 +16,7 @@ for cx, cy in centers:
     data1.append(cluster)
 data1 = np.vstack(data1)
 pd.DataFrame(data1, columns=['x', 'y']).to_csv(
-    '/home/ergi/imperative/Clustering-project/c_clustering/clusters_data/compact.csv', index=False, header=False)
+    'clusters_data/compact.csv', index=False, header=False)
 
 data2 = []
 
@@ -38,7 +38,7 @@ data2.append(np.column_stack([x_c, y_c]))
 
 data2 = np.vstack(data2)
 pd.DataFrame(data2, columns=['x', 'y']).to_csv(
-    '/home/ergi/imperative/Clustering-project/c_clustering/clusters_data/elongated.csv', index=False, header=False)
+    'clusters_data/elongated.csv', index=False, header=False)
 
 data3 = []
 
@@ -68,7 +68,7 @@ data3.append(np.column_stack([x_noise, y_noise]))
 
 data3 = np.vstack(data3)
 pd.DataFrame(data3, columns=['x', 'y']).to_csv(
-    '/home/ergi/imperative/Clustering-project/c_clustering/clusters_data/complex.csv', index=False, header=False)
+    'clusters_data/complex.csv', index=False, header=False)
 
 data4 = []
 
@@ -90,4 +90,4 @@ data4.append(noise)
 
 data4 = np.vstack(data4)
 pd.DataFrame(data4, columns=['x', 'y']).to_csv(
-    '/home/ergi/imperative/Clustering-project/c_clustering/clusters_data/noisy.csv', index=False, header=False)
+    'clusters_data/noisy.csv', index=False, header=False)
