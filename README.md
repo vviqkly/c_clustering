@@ -2,8 +2,7 @@
 Реализованы алгоритмы кластеризации: k-means со случайным выбором центроидов, k-means++ и DBSCAN.
 
 # Структура репозитория:
-
-$tree c_clustering
+```
 c_clustering/
 ├── clustering
 │   ├── common.c
@@ -26,7 +25,7 @@ c_clustering/
 ├── LICENSE
 ├── Makefile
 └── README.md
-
+```
 # Требования для работы:
 
 1. gcc
