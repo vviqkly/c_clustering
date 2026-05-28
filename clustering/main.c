@@ -50,7 +50,6 @@ void save_results(const char *filename, Point *data, int *labels, int n)
     }
     
     fclose(file);
-    printf("  Saved: %s\n", filename);
 }
 
 Result run_kmeans_random(Point *data, int n, int k, int *labels, const char *dataset)
@@ -169,7 +168,7 @@ int main()
         print_table_row("K-means", "++", r2.silhouette, r2.time_ms, r2.clusters_found);
         free(labels2);
         
-        Result r3 = run_dbscan(data, n, 1.0, 5, datasets[d]);
+        Result r3 = run_dbscan(data, n, 0.5, 5, datasets[d]);
         print_table_row("DBSCAN", "eps=1.0", r3.silhouette, r3.time_ms, r3.clusters_found);
         
         printf("============================================================================\n");
