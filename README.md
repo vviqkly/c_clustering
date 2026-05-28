@@ -34,7 +34,14 @@ c_clustering/
 
 # Команды Makefile:
 
-1. make          # генерация данных + визуализация + кластеризация
-2. make run      # кластеризация
-3. make viz      # визуализация исходных данных
-3. make clean    # очистка
+1. make - генерация данных + визуализация + кластеризация
+2. make run - кластеризация
+3. make viz - визуализация исходных данных
+3. make clean - очистка
+
+# Для запуска
+```
+git clone https://github.com/vviqkly/c_clustering.git
+cd c_clustering
+make
+```
