@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import os
 
-np.random.seed(42)
+# np.random.seed(42)
 
 # Создаём папку
 os.makedirs('clusters_data', exist_ok=True)
