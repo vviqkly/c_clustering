@@ -1,9 +1,10 @@
 # c_clustering
-# Реализованы алгоритмы кластеризации: k-means со случайным выбором центроидов, k-means++ и DBSCAN.
+Реализованы алгоритмы кластеризации: k-means со случайным выбором центроидов, k-means++ и DBSCAN.
 
 # Структура репозитория:
 
-c_clustering
+$tree c_clustering
+c_clustering/
 ├── clustering
 │   ├── common.c
 │   ├── common.h
@@ -26,7 +27,7 @@ c_clustering
 ├── Makefile
 └── README.md
 
-#Требования для работы:
+# Требования для работы:
 
 1. gcc
 2. python3 + numpy, pandas, matplotlib
