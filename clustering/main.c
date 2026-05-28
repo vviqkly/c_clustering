@@ -148,7 +148,7 @@ int main()
     
     char *datasets[] = {"compact", "complex", "elongated", "noisy"};
     
-    for (int d = 0; d < 4; d++) 
+    for (int d = 0; d < 4; ++d) 
     {
         char filename[256];
         snprintf(filename, sizeof(filename), "../clusters_data/%s.csv", datasets[d]);
